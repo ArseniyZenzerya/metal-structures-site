@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\AdminController;
+    use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::match(['get', 'post'], '/admin/login', [AdminController::class, 'login']);
+//
+//Route::get('/admin/login', function () {
+//    return view('admin-login');
+//});
